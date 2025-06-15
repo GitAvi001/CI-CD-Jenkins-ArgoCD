@@ -14,7 +14,7 @@ node {
 
     stage('Test image'){
 
-    app.inside('-v ${WORKSPACE}:/app -w /app') {
+    app.inside('-w /c/ProgramData/Jenkins/.jenkins/workspace/buildimage') {
         sh 'echo "Tests passed"'
         }
     }
