@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("avindudocker1/gitops-jenkins-build")
+       app = docker.build("avindudocker1/gitops-jenkins-build") 
     }
 
     stage('Test image') {
