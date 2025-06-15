@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("avindudocker1/GitOps-jenkins-build")
+       app = docker.build("avindudocker1/gitops-jenkins-build")
     }
 
     stage('Test image') {
@@ -22,7 +22,7 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-password-test') {
             app.push("${env.BUILD_NUMBER}")
         }
     }
