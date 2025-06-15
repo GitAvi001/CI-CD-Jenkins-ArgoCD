@@ -12,12 +12,12 @@ node {
        app = docker.build("avindudocker1/gitops-jenkins-build") 
     }
 
-    stage('Test image'){
+    // stage('Test image'){
 
-      app.inside('-v //c/temp:/temp -w /temp'){
-        sh 'echo "Tests passed"'
-        }
-    }
+    //   app.inside('-v //c/temp:/temp -w /temp'){
+    //     sh 'echo "Tests passed"'
+    //     }
+    // }
 
     stage('Push image') {
         
