@@ -9,15 +9,8 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("avindudocker1/gitops-jenkins-build") 
+       app = docker.build("avindudocker1/gitops-jenkins-build") //dockerhub_user_name/dockerhub_repository
     }
-
-    // stage('Test image'){
-
-    //   app.inside('-v //c/temp:/temp -w /temp'){
-    //     sh 'echo "Tests passed"'
-    //     }
-    // }
 
     stage('Push image') {
         
@@ -27,7 +20,7 @@ node {
     }
     
     stage('Trigger ManifestUpdate') {
-                echo "triggering updatemanifestjob"
+                echo "triggering updatemanifestjob" //Keep same job name added in the kubernetes manifet trigger job
                 build job: 'updateKubernetesmanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
         }
 }
