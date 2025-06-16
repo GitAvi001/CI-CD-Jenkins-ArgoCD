@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CI/CD pipeline with Jenkins and ArgoCD  
 This project implements a continuous integration and continuous deployment (CI/CD) pipeline to automate the deployment of a Python application to a Kubernetes cluster using Jenkins, GitHub, Docker Hub, and ArgoCD. The workflow is as follows:
 
